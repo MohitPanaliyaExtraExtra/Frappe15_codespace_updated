@@ -15,7 +15,7 @@ fi
 rm -rf /workspace/.git || true
 
 # -----------------------------
-# Node.js (nvm + Node 20)
+# Node.js (nvm + Node 18)
 # -----------------------------
 export NVM_DIR="$HOME/.nvm"
 
@@ -26,11 +26,11 @@ else
     exit 1
 fi
 
-nvm install 20
-nvm alias default 20
-nvm use 20
+nvm install 18
+nvm alias default 18
+nvm use 18
 
-echo 'nvm use 20' >> ~/.bashrc
+echo 'nvm use 18' >> ~/.bashrc
 
 node -v
 npm install -g yarn
