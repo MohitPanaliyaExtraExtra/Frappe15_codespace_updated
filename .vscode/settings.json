@@ -7,7 +7,7 @@
                 "authProtocol": "default"
             },
             "previewLimit": 50,
-            "server": "host.docker.internal",
+            "server": "mariadb",
             "port": 3306,
             "driver": "MariaDB",
             "name": "MariaDB",
