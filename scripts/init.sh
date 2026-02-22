@@ -15,29 +15,6 @@ fi
 rm -rf /workspace/.git || true
 
 # -----------------------------
-# Wait for MariaDB to be ready
-# -----------------------------
-echo "⏳ Waiting for MariaDB to be ready..."
-until mysql -h mariadb -u root -p123 -e "SELECT 1" &>/dev/null; do
-    echo "   Waiting for MariaDB..."
-    sleep 2
-done
-echo "✅ MariaDB is ready!"
-
-# -----------------------------
-# Wait for Redis services to be ready
-# -----------------------------
-echo "⏳ Waiting for Redis services to be ready..."
-for redis_host in redis-cache redis-queue redis-socketio; do
-    until redis-cli -h "$redis_host" ping &>/dev/null; do
-        echo "   Waiting for $redis_host..."
-        sleep 2
-    done
-    echo "   ✅ $redis_host is ready!"
-done
-echo "✅ Redis services are ready!"
-
-# -----------------------------
 # Node.js (nvm + Node 20)
 # -----------------------------
 export NVM_DIR="$HOME/.nvm"
@@ -49,11 +26,11 @@ else
     exit 1
 fi
 
-nvm install 18
-nvm alias default 18
-nvm use 18
+nvm install 20
+nvm alias default 20
+nvm use 20
 
-echo 'nvm use 18' >> ~/.bashrc
+echo 'nvm use 20' >> ~/.bashrc
 
 node -v
 npm install -g yarn
@@ -66,7 +43,7 @@ if ! command -v uv &> /dev/null; then
     exit 1
 fi
 
-# Recommended Python for Frappe 15 (requires >=3.10, <3.14)
+# Recommended Python for Frappe 15
 uv python install 3.12 --default
 
 # -----------------------------

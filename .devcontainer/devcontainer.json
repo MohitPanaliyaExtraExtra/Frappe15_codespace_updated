@@ -1,5 +1,5 @@
 {
-  "name": "Frappe Bench",
+  "name": "Frappe 15 Bench",
   "forwardPorts": [8000, 9000, 6787],
   "remoteUser": "frappe",
   "settings": {

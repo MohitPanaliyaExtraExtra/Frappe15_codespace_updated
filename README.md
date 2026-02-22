@@ -7,13 +7,13 @@ It's ridiculously easy -
 Setup happens in two steps - 
 1. Github will first create a codespace
 2. Once the codespace is initialized (you will see VSCode UI) a script runs that will -
-   1. Create a bench with Frappe develop branch and configure it
+   1. Create a bench with Frappe version-15 branch and configure it
    2. Create a new site called dev.localhost with the password `admin`
    3. Enables developer mode, sets dev.localhost as default site 
 
 # Features
 
-1. A fresh bench is initialized with the latest Frappe develop code along with a new site when the codespace is initially created
+1. A fresh bench is initialized with the latest Frappe version-15 code along with a new site when the codespace is initially created
 1. Pre-configured `launch.json` with the following options -
    1. Web Server
    2. 3 Workers
